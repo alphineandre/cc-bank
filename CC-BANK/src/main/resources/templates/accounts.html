@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>All Accounts</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+<header>
+    <h1>All Accounts</h1>
+</header>
+<main>
+    <table>
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Owner</th>
+            <th>Balance</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="account : ${accounts}">
+            <td th:text="${account.id}"></td>
+            <td th:text="${account.owner}"></td>
+            <td th:text="${account.balance}"></td>
+        </tr>
+        </tbody>
+    </table>
+</main>
+<footer>
+    <p>&copy; 2024 Bank Account Management System</p>
+</footer>
+</body>
+</html>

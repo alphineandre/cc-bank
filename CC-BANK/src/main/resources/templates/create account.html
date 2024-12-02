@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Account</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+<header>
+    <h2>Create Account</h2>
+    <a href="/" class="back-button"><i class="fa-solid fa-circle-chevron-left"></i></a>
+</header>
+
+<main>
+    <form th:action="@{/accounts/create}" method="post">
+        <div>
+            <label for="name">Name:</label>
+            <input
+                    type="text"
+                    id="name"
+                    name="name" required>
+        </div>
+
+        <div>
+            <label for="surname">Surname:</label>
+            <input
+                    type="text"
+                    id="surname"
+                    name="surname" required>
+        </div>
+
+        <div>
+            <label for="email">Email:</label>
+            <input
+                    type="email"
+                    id="email"
+                    name="email" required>
+        </div>
+
+        <div>
+            <label for="cellNumber">Cell Number:</label>
+            <input
+                    type="text"
+                    id="cellNumber"
+                    name="cellNumber" required>
+        </div>
+
+        <div>
+            <label for="accountType">Account Type:</label>
+            <select id="accountType" name="accountType" required>
+                <option value="checking">Checking Account</option>
+                <option value="savings">Savings Account</option>
+            </select>
+        </div>
+
+        <div>
+            <label for="pin">4-Digit PIN:</label>
+            <input
+                    type="password"
+                    id="pin"
+                    name="pin"
+                    pattern="\d{4}"
+                    title="Please enter a 4-digit PIN" required>
+        </div>
+
+        <div>
+            <button type="submit">Create Account</button>
+    </div>
+        <div th:if="${error}">
+            <p th:text="${error}"></p>
+    </div>
+    </form>
+</main>
+
+<footer>
+    <p>&copy; 2024 CC Bank Account Management System</p>
+</footer>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Transfer Details</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+<header>
+    <h1>Transfer Details</h1>
+</header>
+<main>
+    <div>
+        <h2>From Account</h2>
+        <p>Owner: <span th:text="${fromAccount.owner}"></span></p>
+        <p>Balance: <span th:text="${fromAccount.balance}"></span></p>
+    </div>
+    <div>
+        <h2>To Account</h2>
+        <p>Owner: <span th:text="${toAccount.owner}"></span></p>
+        <p>Balance: <span th:text="${toAccount.balance}"></span></p>
+    </div>
+    <!-- Back to Account Button -->
+    <div>
+        <button onclick="window.history.back()">Back to Account</button>
+    </div>
+</main>
+<footer>
+    <p>&copy; 2024 Bank Account Management System</p>
+</footer>
+</body>
+</html>

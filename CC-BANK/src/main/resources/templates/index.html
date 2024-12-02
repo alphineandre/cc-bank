@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Bank Account Management</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+<header>
+    <h1>CC BANK</h1>
+</header>
+<main>
+    <h2>Access Your Account</h2>
+    <form th:action="@{/accounts/access}" method="post">
+        <div>
+            <label for="identifier">Account Number or Email:</label>
+            <input type="text" id="identifier" name="identifier" required>
+        </div>
+        <div>
+            <label for="pin">PIN:</label>
+            <input type="password" id="pin" name="pin" pattern="\d{4}" required>
+        </div>
+        <div>
+            <button type="submit">Access Account</button>
+        </div>
+        <div th:if="${error}">
+            <p th:text="${error}"></p>
+        </div>
+    </form>
+</main>
+<div class="center-btn">
+    <a th:href="@{/accounts/create}" class="btn">Create New Account</a>
+</div>
+<footer>
+    <p>&copy; 2024 Bank Account Management System</p>
+</footer>
+</body>
+</html>

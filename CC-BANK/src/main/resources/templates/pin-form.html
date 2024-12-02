@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+
+<head>
+  <title>Enter PIN</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+<header>
+  <h1>Enter PIN</h1>
+  <a href="/" class="back-button"><i class="fa-solid fa-circle-chevron-left"></i></a>
+</header>
+<main>
+  <form th:action="@{/accounts/{id}(id=${id})}" method="post">
+    <div>
+      <label for="pin">PIN:</label>
+      <input type="password" id="pin" name="pin" pattern="\d{4}" required>
+    </div>
+    <div>
+      <button type="submit">Access Account</button>
+    </div>
+    <div th:if="${error}">
+      <p th:text="${error}"></p>
+    </div>
+  </form>
+</main>
+<footer>
+  <p>&copy; 2024 Bank Account Management System</p>
+</footer>
+</body>
+</html>
+
